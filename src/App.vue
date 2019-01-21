@@ -1,28 +1,30 @@
 <template>
-  <div id="app">
+  <div class="ui container" id="app">
     <img src="./assets/logo.png">
-    <HelloWorld/>
+    <Menu/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Menu from './components/Menu'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Menu
+  },
+  created() {
+    try {
+      // NOTE: 45min refresh policy is what google recommends
+      window.setInterval(this.$refreshToken(), 2.7e+6)
+    } catch (e) {
+      console.error(e)
+    }
+
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
