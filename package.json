@@ -16,8 +16,10 @@
     "semantic-ui": "^2.4.2",
     "vue": "^2.5.2",
     "vue-axios": "^2.1.4",
+    "vue-cookies": "^1.5.12",
     "vue-gapi": "0.0.10",
-    "vue-google-api": "^0.1.4"
+    "vue-google-api": "^0.1.4",
+    "vue-lodash": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

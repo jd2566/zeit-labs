@@ -5,6 +5,8 @@ import App from './App'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueGAPI from "vue-gapi"
+import VueLodash from 'vue-lodash'
+import VueCookies from 'vue-cookies'
 
 const apiConfig = {
   apiKey: "AIzaSyD-pjg5F8kmMldkYZcpdCkX3m5mgDOMGKc",
@@ -14,9 +16,13 @@ const apiConfig = {
 }
 
 Vue.use(VueAxios, axios)
-Vue.use(VueGAPI, apiConfig);
+Vue.use(VueGAPI, apiConfig)
+Vue.use(VueLodash)
+Vue.use(VueCookies)
 
 Vue.config.productionTip = false
+
+VueCookies.config('7d')
 
 /* eslint-disable no-new */
 new Vue({
