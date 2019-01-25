@@ -7,6 +7,7 @@ import VueAxios from 'vue-axios'
 import VueGAPI from "vue-gapi"
 import VueLodash from 'vue-lodash'
 import VueCookies from 'vue-cookies'
+import VueI18n from 'vue-i18n'
 
 const apiConfig = {
   apiKey: "AIzaSyD-pjg5F8kmMldkYZcpdCkX3m5mgDOMGKc",
@@ -19,14 +20,42 @@ Vue.use(VueAxios, axios)
 Vue.use(VueGAPI, apiConfig)
 Vue.use(VueLodash)
 Vue.use(VueCookies)
+Vue.use(VueI18n)
 
 Vue.config.productionTip = false
 
 VueCookies.config('7d')
 
+const messages = {
+  tw: {
+    flavor: {
+      one: '單口味',
+      two: '雙口味'
+    }
+  },
+  en: {
+    flavor: {
+      one: 'Single',
+      two: 'Double'
+    }
+  },
+  jp: {
+    flavor: {
+      one: 'シングル',
+      two: 'ダブル'
+    }
+  }
+}
+
+const i18n = new VueI18n({
+  locale: 'en', // set locale
+  messages, // set locale messages
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  i18n
 })
